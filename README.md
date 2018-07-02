@@ -1,3 +1,3 @@
 # full-stack-review-site
 
-Paired project: Ian Pelow & Joanne Kelly
+Paired project: Joanne Kelly and Ian Pelow
