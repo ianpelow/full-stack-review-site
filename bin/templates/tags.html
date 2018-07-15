@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Tags</title>
+</head>
+<body>
+	<header>
+		<h1>All Tags</h1>
+	</header>
+	<main>
+	<div class="breed">
+		<ul>
+			<li th:each="tag: ${tags}"><a th:href="|@{/tag/}${tag.name}|">
+					<span th:text="${tag}"></span>
+			</a></li>
+
+			<form action="/tags" method="POST">
+				<label>New Tag: <input type="text" name="name" /></label> <input
+					type="submit" value="Submit" />
+			</form>
+		</ul>
+		<ul class="api-tag"></ul>
+	</div>
+	</main>
+	<footer>
+		<a class="breeds" th:href="@{/breeds}">Return to home page</a>
+		<p class="copyrightInfo">&copy; Bridleplates.com LLC</p>
+	</footer>
+
+</body>
+</html>

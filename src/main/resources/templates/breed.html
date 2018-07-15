@@ -29,14 +29,16 @@
 		<img th:src="|/images/${breed.imgUrl2}" />
 	</aside>
 
-	<form action="/action_page.php" id="usrform">
-		Name: <input type="text" name="usrname"> <input type="submit">
-	</form>
-	<br>
-	<textarea rows="4" cols="50" name="comment" form="usrform">
-	Enter text here...</textarea>
+	<p>Submit a comment and join our discussion!</p>
 
-	<p>Enter a comment above and join our discussion!</p>
+	<form action="/Submit" method="POST">
+		<div>
+			<textarea rows="8" cols="50" name="comments" id="comments">
+			Enter your comment here... </textarea>
+		</div>
+		
+		<input type="submit" value="Submit">
+	</form>
 
 	<div>
 		<p>

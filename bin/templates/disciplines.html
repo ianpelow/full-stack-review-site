@@ -9,64 +9,54 @@
 </head>
 
 <body>
-		<header><h1 id="disciplines">Disciplines</h1></header>	
-	
-<div class="dropdown">
+	<header>
+		<h1 id="disciplines">Disciplines</h1>
+	</header>
+
+	<div class="dropdown">
 		<button onclick="myFunction()" class="dropbtn">Navigation</button>
-			<div id="myDropdown" class="dropdown-content">
-				<a href="breeds.html">All Breeds</a> 
-				<a href="breeds/1">Thoroughbred</a> 
-				<a href="breeds/2">Warmblood</a> 
-				<a href="breeds/3">Quarter Horse</a>
-				<a href="breeds/4">Arabian</a> 
-				<a href="breeds/5">Mini</a> 
-				<a href="breeds/6">Budweiser</a>
+		<div id="myDropdown" class="dropdown-content">
+			<a href="breeds.html">All Breeds</a> <a href="breeds/1">Thoroughbred</a>
+			<a href="breeds/2">Warmblood</a> <a href="breeds/3">Quarter Horse</a>
+			<a href="breeds/4">Arabian</a> <a href="breeds/5">Mini</a> <a
+				href="breeds/6">Budweiser</a>
+		</div>
 	</div>
-</div>
-<script>
+	<script>
 		function myFunction() {
 			document.getElementById("myDropdown").classList.toggle("show");
 		}
-        
-        
-        function runTests(){
-        testHeader();
-        testCountOfBreedsInDropdown();
-        
-        }
-        
-        function testHeader(){
+		function runTests() {
+			testHeader();
+			testCountOfBreedsInDropdown();
+		}
+		function testHeader() {
 			var str = document.getElementById("disciplines").value;
-    		var patt = new RegExp(document.getElementById("disciplines").value);
-    		var res = patt.test(str);
-    		alert("Header Test: " + res);
-        
-        }
-        
-         function testCountOfBreedsInDropdown(){
-            var anchors = document.getElementById("myDropdown").getElementsByTagName("a");
-            var testLength = new RegExp(anchors.length).test("7");
-    		alert("Anchor Test Count: " + anchors.length + "(" + testLength + ")");
-        
-        }
-    
+			var patt = new RegExp(document.getElementById("disciplines").value);
+			var res = patt.test(str);
+			alert("Header Test: " + res);
+		}
+		function testCountOfBreedsInDropdown() {
+			var anchors = document.getElementById("myDropdown")
+					.getElementsByTagName("a");
+			var testLength = new RegExp(anchors.length).test("7");
+			alert("Anchor Test Count: " + anchors.length + "(" + testLength
+					+ ")");
+		}
+	</script>
 
-</script>
-
-<ul>
-	<li th:each="discipline : ${disciplines}"><a
+	<ul>
+		<li th:each="discipline : ${disciplines}"><a
 			th:href="|@{/disciplines/}${discipline.id}|"> <span
 				th:text="${discipline.title}"></span>
-	</a></li>
-</ul>
-<aside>
-    <button onclick="runTests()" class="dropbtn">Alan, Click Here!</button>
-    </aside>
+		</a></li>
+	</ul>
+	<aside>
+		<button onclick="runTests()" class="dropbtn">Alan, Click
+			Here!</button>
+	</aside>
 
-<footer>
-
-		Copyright www.bridleplates.com LLC 2018
-	</footer>
+	<footer> Copyright www.bridleplates.com LLC 2018 </footer>
 
 </body>
 </html>

@@ -1,39 +1,39 @@
-
-*
-{	box-sizing: border-box;
-  padding: 1px;
+* {
+	box-sizing: border-box;
+	padding: 1px;
 }
 
 body {
-  
-   padding: 10px;
-   background-image: url("../images/pasture.jpg");
-   background-repeat: no-repeat;
-   background-size: 100%;
-   font-size: 16px;
+	padding: 10px;
+	background-image: url("../images/pasture2.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	font-size: 16px;
 }
+
 img {
-    border: 6px solid #ddd;
-    border-radius: 30px;
-    padding: 1px; /* this pads around the picture inside the box and makes it smaller as the number gets larger*/
-    max-width: 225px;
-    margin: 50px 50px 50px 125px;
-   
+	border: 6px solid #ddd;
+	border-radius: 30px;
+	padding: 1px;
+	/* this pads around the picture inside the box and makes it smaller as the number gets larger*/
+	max-width: 225px;
+	margin: 50px 50px 50px 125px;
 }
- 
+
 ul {
 	list-style-type: none;
-	
 }
+
 li {
-	margin:-40px 0px 0px 400px;
+	margin: -40px 0px 0px 400px;
 	padding: 5px;
 	font-size: 55px;
-}  
- text {
- 
- }
- aside{
- 	margin:0px 0px 0px 600px;
- }   
- 
+}
+
+text {
+	
+}
+
+aside {
+	margin: 0px 0px 0px 600px;
+}
