@@ -9,62 +9,64 @@
 </head>
 
 <body>
-		<header><h1>Breeds Of Horses</h1></header>
-	
-<div class="dropdown">
-		<button onclick="myFunction()" class="dropbtn">Navigation</button>
-			<div id="myDropdown" class="dropdown-content">
-				<a href="disciplines.html">Back To Discipline Home</a> 
-				<a href="disciplines/"></a> 
-				<a href="disciplines/1">Quarter Horse - Western</a> 
-				<a href="disciplines/2">Quarter Horse - Hunt Seat</a> 
-				<a href="disciplines/3">Quarter Horse - Jumping</a> 
-				<a href="disciplines/4">Quarter Horse - Racing</a> 
-				<a href="/"></a> 
-				<a href="/"></a> 
-				<a href="disciplines/5">Thoroughbred - Western</a> 
-				<a href="disciplines/6">Thoroughbred - Eventing</a> 
-				<a href="disciplines/7">Thoroughbred - Show Jumping</a> 
-				<a href="disciplines/8">Thoroughbred - Dressage </a> 
-				<a href="disciplines/9">Thoroughbred - Hunter</a> 
-				<a href="disciplines/10">Thoroughbred - Race Horse</a> 
-				<a href="/"></a> 
-				<a href="/"></a> 
-				<a href="disciplines/11">Warmblood - Eventing</a>  
-				<a href="disciplines/12">Warmblood - Show Jumping</a>
-				<a href="disciplines/13">Warmblood - Dressage </a>
-				<a href="disciplines/14">Warmblood - Hunter</a> 
-				<a href="/"></a> 
-				<a href="/"></a> 
-				<a href="disciplines/15">Arabian - Show Hack</a> 
-				<a href="disciplines/16">Arabian - Driving</a> 
-				<a href="/"></a> 
-				<a href="/"></a> 
-				<a href="disciplines/17">Mini - Driving</a> 
-				<a href="/"></a> 
-				<a href="/"></a> 
-				<a href="disciplines/17">Draft Horse - Driving</a> 			
-	</div>
-</div>
+	<header>
+		<h1>Breeds Of Horses</h1>
+	</header>
 
-<script>
+	<div class="dropdown">
+		<button onclick="myFunction()" class="dropbtn">Navigation</button>
+		<div id="myDropdown" class="dropdown-content">
+			<a href="disciplines.html">Back To Discipline Home</a> <a
+				href="disciplines/"></a> <a href="disciplines/1">Quarter Horse -
+				Western</a> <a href="disciplines/2">Quarter Horse - Hunt Seat</a> <a
+				href="disciplines/3">Quarter Horse - Jumping</a> <a
+				href="disciplines/4">Quarter Horse - Racing</a>
+			<!-- empty options -->
+			<div class="break" />
+			<a href="disciplines/5">Thoroughbred - Western</a> <a
+				href="disciplines/6">Thoroughbred - Eventing</a> <a
+				href="disciplines/7">Thoroughbred - Show Jumping</a> <a
+				href="disciplines/8">Thoroughbred - Dressage </a> <a
+				href="disciplines/9">Thoroughbred - Hunter</a> <a
+				href="disciplines/10">Thoroughbred - Race Horse</a>
+			<div class="break" />
+			<a href="disciplines/11">Warmblood - Eventing</a> <a
+				href="disciplines/12">Warmblood - Show Jumping</a> <a
+				href="disciplines/13">Warmblood - Dressage </a> <a
+				href="disciplines/14">Warmblood - Hunter</a>
+			<div class="break" />
+			<a href="disciplines/15">Arabian - Show Hack</a> <a
+				href="disciplines/16">Arabian - Driving</a>
+			<div class="break" />
+			<a href="disciplines/17">Mini - Driving</a>
+			<div class="break" />
+			<a href="disciplines/17">Draft Horse - Driving</a>
+		</div>
+	</div>
+
+	<script>
 		function myFunction() {
 			document.getElementById("myDropdown").classList.toggle("show");
 		}
 </script>
 
-<ul>
-	<li th:each="breed : ${breeds}"><a
+	<ul>
+		<li th:each="breed : ${breeds}"><a
 			th:href="|@{/breeds/}${breed.id}|"> <span
-				th:text="${breed.title}"></span>
-	</a></li>
-</ul>
+				th:text="${breed.title}">Name</span>
+		</a></li>
+	</ul>
 
-<footer>
+	<footer>
+
+		<ul>
+			<li><a th:href="@{/tags}">Browse by tag</a></li>
+		</ul>
 		Copyright www.bridleplates.com LLC 2018
 	</footer>
 
 </body>
 </html>
+
 
 

@@ -1,37 +1,50 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Disciplines</title>
-	
- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" media="all" 
-          href="../../../css/discipline.css" th:href="@{/css/discipline.css}" />
+<title>Disciplines</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" media="all"
+	href="../../../css/discipline.css" th:href="@{/css/discipline.css}" />
 
 </head>
 <body>
 
 
-<ul>
-	  <li th:each="discipline: ${discipline}"> 	    
-	   	 	<span th:text="${discipline.title}"></span>
-    	</li>
+	<ul>
+		<li th:each="discipline: ${discipline}"><span
+			th:text="${discipline.title}"></span></li>
 	</ul>
-	   	 	
-			 <div><img th:src="|/images/${discipline.imgUrl2}" />
-			 <img th:src="|/images/${discipline.imgUrl}" />
-			 <img th:src="|/images/${discipline.imgUrl3}" />
-		</div>
 
-<article th:text="${discipline.description}"></article>
+	<div>
+		<img th:src="|/images/${discipline.imgUrl2}" /> <img
+			th:src="|/images/${discipline.imgUrl}" /> <img
+			th:src="|/images/${discipline.imgUrl3}" />
+	</div>
 
+	<article th:text="${discipline.description}"></article>
 
-<div>
-	<p><a th:href="@{/disciplines}">Back to list of disciplines</a></p>
-	<p><a th:href="@{/breeds}">Back to list of breeds</a></p>
-</div>
+	<form action="/action_page.php" id="usrform">
+		Name: <input type="text" name="usrname"> <input type="submit">
+	</form>
+	<br>
+	<textarea rows="4" cols="50" name="comment" form="usrform">
+	Enter text here...</textarea>
 
-<footer> <small>Copyright www.bridleplates.com LLC 2018</small> </footer>
+	<p>Enter a comment above and join our discussion!</p>
+
+	<div>
+		<p>
+			<a th:href="@{/disciplines}">Back to list of disciplines</a>
+		</p>
+		<p>
+			<a th:href="@{/breeds}">Back to list of breeds</a>
+		</p>
+	</div>
+
+	<footer>
+		<small>Copyright www.bridleplates.com LLC 2018</small>
+	</footer>
 </body>
 </html>
-
