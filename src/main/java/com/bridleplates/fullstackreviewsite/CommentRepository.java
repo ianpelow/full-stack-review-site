@@ -5,4 +5,6 @@ import org.thymeleaf.dom.Comment;
 
 public interface CommentRepository extends CrudRepository<Comment, Long> {
 
+	Long findByComment(String deleteComment);
+
 }

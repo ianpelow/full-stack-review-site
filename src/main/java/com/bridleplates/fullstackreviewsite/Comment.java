@@ -1,26 +1,48 @@
 package com.bridleplates.fullstackreviewsite;
 
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 
-@Embeddable
+@Entity
 public class Comment {
-	
-	private String commentText;
 
-	public Comment() {
+	@Id
+	@GeneratedValue
+	private Long id;
+	private String userName;
+
+	@Lob
+	private String contents;
+
+	@ManyToOne
+	Breed breed;
+
+	protected Comment() {
 	}
 
-	public Comment(String commentText) {
-		this.commentText = commentText;
+	public Comment(String userName, String contents, Breed breed) {
+		this.userName = userName;
+		this.contents = contents;
+		this.breed = breed;
 	}
 
-	public String getCommentText() {
-		return commentText;
+	public Long getId() {
+		return id;
 	}
 
-	@Override
-	public String toString() {
-		return "Comment [commentText=" + commentText + "]";
+	public String getUserName() {
+		return userName;
+	}
+
+	public String getContents() {
+		return contents;
+	}
+
+	public Breed getBreed() {
+		return breed;
 	}
 
 }

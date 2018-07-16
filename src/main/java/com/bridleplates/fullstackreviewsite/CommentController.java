@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class CommentController<CommentRepository> {
+public class CommentController {
 
 	@Autowired
 	CommentRepository commentRepo;
@@ -20,4 +20,11 @@ public class CommentController<CommentRepository> {
 		return "redirect:/breeds/{id}";
 
 	}
+	
+	@RequestMapping(value = "/remove-comment", method = RequestMethod.POST)
+	public String removeComment(String deleteComment) {
+		commentRepo.delete(commentRepo.findByComment(deleteComment));
+		return "redirect:/breed";
+	}
+
 }

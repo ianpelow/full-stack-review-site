@@ -23,19 +23,6 @@
 			th:src="|/images/${discipline.imgUrl3}" />
 	</div>
 
-	<article th:text="${discipline.description}"></article>
-
-	<p>Submit a comment and join our discussion!</p>
-
-	<form action="/Submit" method="POST">
-		<div>
-			<textarea rows="8" cols="50" name="comments" id="comments">
-			Enter your comment here... </textarea>
-		</div>
-		
-		<input type="submit" value="Submit">
-	</form>
-
 	<div>
 		<p>
 			<a th:href="@{/disciplines}">Back to list of disciplines</a>

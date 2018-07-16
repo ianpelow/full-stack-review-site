@@ -30,7 +30,7 @@ public class Discipline {
 	public Discipline () {
 
 	}
-	// JPA generates the id in the constructor
+
 	public Discipline(String title, String description, String imgUrl, String imgUrl2, String imgUrl3, Breed breed) {
 		this.title = title;
 		this.description = description;

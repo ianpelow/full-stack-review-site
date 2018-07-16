@@ -7,22 +7,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-//This is what we need to figure out
-
 @RestController
 @RequestMapping("/api")
 public class ApiController {
-
+	
 	@Autowired
-	TagRepository tagRepo;
-
-	@RequestMapping("/tags") // /api/tags
-	public Collection<Tag> getTags() {
-		return (Collection<Tag>) tagRepo.findAll();
+	BreedRepository breedRepo;
+	
+	@RequestMapping("/breeds")
+	public Collection<Breed> getBreeds() {
+		return (Collection<Breed>) breedRepo.findAll();
 	}
-
-	@RequestMapping("/tags/{id}")
-	public Tag getTag(@PathVariable(name = "id") Long id) {
-		return tagRepo.findOne(id);
+	
+	@RequestMapping("/breeds/{id}")
+	public Breed getBreed(@PathVariable(name = "id") Long id) {
+		return breedRepo.findOne(id);
 	}
 }
