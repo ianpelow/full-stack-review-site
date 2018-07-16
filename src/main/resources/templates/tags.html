@@ -4,7 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-<title>Tags</title>
+     <link rel="stylesheet" type="text/css" media="all" 
+          href="../../../css/tags.css" th:href="@{/css/tags.css}" /><title>Tags</title>
 </head>
 <body>
 	<header>
@@ -17,9 +18,26 @@
 					<span th:text="${tag}"></span>
 			</a></li>
 
-			<form action="/tags" method="POST">
-				<label>New Tag: <input type="text" name="name" /></label> <input
-					type="submit" value="Submit" />
+			<form th:action="|@{/tag/}${name}|" method="POST">
+				<h2>Add Attire: </h2> 
+				<input type="text" name ="name"/>
+				 <h2>Description of Attire: </h2>
+				<input type="text" name ="description"/>
+				<br/>
+				<h2>Please choose pictures from local image directory only (example: /src/main/resources/static/images): </h2>
+				<input type="file" name="imgUrl" accept="*"/>
+				<input type="file" name="imgUrl2" accept="*"/>
+				<input type="file" name="imgUrl3" accept="*"/>
+				<h2>Select breeds associated with Attire: </h2>
+				<select class="form-control" name="breeds" multiple="multiple">
+    					<option th:each="breed : ${breeds}" 
+    							th:selected = "${breeds.contains(breed)}"
+    							th:value="${breed.id}" 
+    							th:text="${breed.title}" >
+    					</option>
+ 				</select><br/>
+
+				<input type="submit" value="Submit" />
 			</form>
 		</ul>
 		<ul class="api-tag"></ul>
@@ -27,8 +45,11 @@
 	</main>
 	<footer>
 		<a class="breeds" th:href="@{/breeds}">Return to home page</a>
+		<p> <a th:href="@{/tags}">Browse by tag</a></p>
 		<p class="copyrightInfo">&copy; Bridleplates.com LLC</p>
 	</footer>
+	
+	<script src="/js/app.js"></script>
 
 </body>
 </html>
