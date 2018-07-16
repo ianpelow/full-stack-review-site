@@ -1,50 +1,47 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Disciplines</title>
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" media="all"
-	href="../../../css/discipline.css" th:href="@{/css/discipline.css}" />
+	<title>Disciplines</title>
+	
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" 
+          href="../../../css/discipline.css" th:href="@{/css/discipline.css}" />
 
 </head>
 <body>
 
 
-	<ul>
-		<li th:each="discipline: ${discipline}"><span
-			th:text="${discipline.title}"></span></li>
-	</ul>
+<span th:each="discipline: ${discipline}">  </span>    
+	   	 	<span th:text="${discipline.title}"></span>
+    	
+	   	 	
+			 <div><img th:src="|/images/${discipline.imgUrl2}" />
+			 <img th:src="|/images/${discipline.imgUrl}" />
+			 <img th:src="|/images/${discipline.imgUrl3}" />
+		</div>
 
-	<div>
-		<img th:src="|/images/${discipline.imgUrl2}" /> <img
-			th:src="|/images/${discipline.imgUrl}" /> <img
-			th:src="|/images/${discipline.imgUrl3}" />
-	</div>
+<article th:text="${discipline.description}"></article>
 
-	<article th:text="${discipline.description}"></article>
+		
+		<aside class="discipline">
+		<ul>
+					<li th:each="comment:${discipline.comments}">
+					<h6 th:text="${comment.comment}"></h6></li>
+			</ul>
+		</aside>
+		
+		<form th:action="|@{/discipline/}${discipline.id}|" method="POST">
+				<h2>Add Comment: </h2> 
+				<input type="text" name ="comment"/>
+				<input type="submit" value="Submit" />
+			</form>
+<div>
+	<p><a th:href="@{/disciplines}">Back to list of disciplines</a></p>
+	<p><a th:href="@{/breeds}">Back to list of breeds</a></p>
+	<p> <a th:href="@{/tags}">Browse by tag</a></p>
+</div>
 
-	<form action="/action_page.php" id="usrform">
-		Name: <input type="text" name="usrname"> <input type="submit">
-	</form>
-	<br>
-	<textarea rows="4" cols="50" name="comment" form="usrform">
-	Enter text here...</textarea>
-
-	<p>Enter a comment above and join our discussion!</p>
-
-	<div>
-		<p>
-			<a th:href="@{/disciplines}">Back to list of disciplines</a>
-		</p>
-		<p>
-			<a th:href="@{/breeds}">Back to list of breeds</a>
-		</p>
-	</div>
-
-	<footer>
-		<small>Copyright www.bridleplates.com LLC 2018</small>
-	</footer>
+<footer> <small>Copyright www.bridleplates.com LLC 2018</small> </footer>
 </body>
 </html>
