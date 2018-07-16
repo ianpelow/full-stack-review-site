@@ -15,7 +15,7 @@ img {
 	border: 6px solid #ddd;
 	border-radius: 30px;
 	padding: 1px;
-	/* this pads around the picture inside the box and makes it smaller as the number gets larger*/
+
 	max-width: 225px;
 	margin: 50px 50px 50px 125px;
 }
